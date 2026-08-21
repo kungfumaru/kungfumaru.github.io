@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서수현 — 프로젝트 & 일정</title>
+<meta name="description" content="차량 SW 임베디드 엔지니어 — CAN·모터 토크제어부터 Zonal·SOME/IP까지">
+<style>
+:root { --bg:#fafaf7; --card:#ffffff; --line:#e5e2d9; --text:#23262f; --muted:#6b7280;
+  --accent:#8a8f1f; --ok:#1e8f57; --hot:#d64560; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0e1119; --card:#151a26; --line:#2a3145; --text:#e8ebf4; --muted:#9aa3b8;
+    --accent:#d8e05e; --ok:#2fae6e; --hot:#ff8899; } }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:"Pretendard","Malgun Gothic",sans-serif;
+  line-height:1.7; word-break:keep-all; padding:48px 20px 80px; }
+main { max-width:860px; margin:0 auto; }
+header { margin-bottom:36px; }
+h1 { font-size:30px; }
+.sub { color:var(--accent); font-weight:700; font-size:15px; margin:4px 0 12px; }
+.intro { font-size:15px; color:var(--muted); max-width:640px; }
+h2 { font-size:19px; margin:40px 0 14px; border-bottom:2px solid var(--line); padding-bottom:8px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+.card h3 { font-size:14px; margin-bottom:6px; color:var(--accent); }
+.card p { font-size:12.5px; color:var(--muted); }
+.dom { font-size:14px; color:var(--muted); margin:20px 0 8px; }
+.projects { display:flex; flex-direction:column; gap:10px; }
+.proj { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 16px; }
+.proj-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+.proj-head b { font-size:15px; }
+.badge { font-size:11px; border:1px solid var(--line); border-radius:10px; padding:1px 8px; color:var(--muted); }
+.badge.done { color:var(--ok); border-color:var(--ok); }
+.period { font-size:11.5px; color:var(--muted); margin-left:auto; }
+.proj p { font-size:13px; color:var(--muted); }
+.dl { display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--line);
+  border-radius:10px; padding:8px 14px; margin-bottom:6px; font-size:13.5px; }
+.dl small { color:var(--muted); }
+.dl em { margin-left:auto; font-style:normal; font-weight:700; color:var(--hot); font-size:12px; }
+footer { margin-top:48px; color:var(--muted); font-size:12px; text-align:center; }
+footer a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>서수현</h1>
+  <p class="sub">차량 SW 임베디드 엔지니어 — CAN·모터 토크제어부터 Zonal·SOME/IP까지</p>
+  <p class="intro">성균관대에서 <b>철학과 전기전자공학</b>을 함께 전공합니다. 라이브러리 뒤에 숨지 않고 CAN 드라이버를 비트타이밍부터, CPU를 파이프라인부터 직접 구현했습니다. 철학에서 훈련한 '왜?'를 공학의 '어떻게'에 붙이는 것이 제 방식입니다.</p>
+</header>
+
+<h2>🔧 기술 모듈</h2>
+<div class="grid"><div class="card"><h3>CAN·차량 네트워크</h3><p>MCP2515 레지스터 레벨 드라이버 자작(비트타이밍·인터럽트·500kbps), 버스 모니터 제작, AK60 MIT 모드 CAN 2채널 운용.</p></div><div class="card"><h3>햅틱 렌더링·인터페이스</h3><p>CHAI3D 중력보상·가상 역감, 펠티어 온도 디스플레이 PID, bHaptics 진동 조끼 — 조우형(encounter-type) 햅틱 설계 일관 축.</p></div><div class="card"><h3>메카넘·전방향 주행</h3><p>메카넘 IK/FK·롤러 물리(GAMMA 부호)·휠 오도메트리·GOAL_PID(안티와인드업·속도 피드포워드)·게인 스케줄링 벤치까지 주행 제어 전층. 시뮬-실물 양쪽 검증.</p></div><div class="card"><h3>모터 제어 (Dynamixel·CubeMars)</h3><p>다이나믹셀 위치/속도/전류 모드·GroupSyncRead·OpenCR 펌웨어, AK60-6 MIT 모드, PD+중력보상, 시뮬 액추에이터 모델링까지.</p></div><div class="card"><h3>MuJoCo·물리 시뮬레이션</h3><p>MJCF 모델 생성·결합(통합 모델 nq63), 플랜트-뷰어 분리 아키텍처, sysid 1차모델 근사, 헤드리스 결정적 테스트. URDF↔MJCF 변환 포함.</p></div><div class="card"><h3>회로·PCB 설계</h3><p>KiCad 회로도·풋프린트·ERC, 아날로그(오디오)+디지털 혼재 보드의 그라운드/노이즈 분리 설계, JLCPCB 발주 플로.</p></div><div class="card"><h3>MCU 펌웨어</h3><p>STM32(HAL·I2S DMA)·Nuvoton M453(ADC+DMA 더블버퍼)·ESP32(1kHz 제어루프·NVS·워치독)·OpenCR 등 보드 다수 펌웨어. UART 프레임·UDP 패킷 프로토콜 설계 포함.</p></div><div class="card"><h3>모션 트래킹·캘리브레이션</h3><p>hand-eye 캘리브레이션(Kabsch·LM·칼만 랙보정), Lighthouse×inside-out 좌표계 정합, ArUco 절대측위.</p></div><div class="card"><h3>웹 GUI·시각화 툴</h3><p>three.js 3D 뷰어·HTML5 Canvas 게임엔진·Flask/정적 웹 GUI·Nextion HMI. 자작 툴을 빠르게 세워 검증·발표에 활용하는 축.</p></div></div>
+
+<h2>🚀 프로젝트</h2>
+<h3 class="dom">로봇·제어</h3><div class="projects"><div class="proj"><div class="proj-head"><b>AK60 상지 외골격 (DNA-HERO 마루)</b><span class="badge">진행중</span>
+          <span class="period">2026.07~</span></div><p>T-Motor AK60-6 4개·4자유도 상지 외골격 — MIT 모드 CAN 2채널 제어, CHAI3D 중력보상+가상환경 역감 1차 완성. DNA-HERO IIS 마루 과제의 실체(조우형 햅틱 인터페이스 프레이밍). 다음 관문 = 하드웨어 긴급제동(Cat.0 전원차단) 제작 후 착용 실험 확대. 모터는 연구실 물품(AK60-6 5EA).</p></div><div class="proj"><div class="proj-head"><b>학습용 6축 다이나믹셀 팔</b><span class="badge">진행중</span>
+          <span class="period">2026.07~</span></div><p>햅틱팀 동일 구성 6축 팔(XM430/XH430/XC330 혼합)로 개인 학습 — 축구성 실측 후 URDF 재작성, 읽기전용 미러→DLS IK 구동→Tk 컨트롤스테이션까지 완주. 영공간 자세 바이어스로 팔 감김(표류) 수정. MuJoCo 시각 연동 완결.</p></div><div class="proj"><div class="proj-head"><b>메카넘 모바일로봇 (시뮬+실물)</b><span class="badge">진행중</span>
+          <span class="period">2026.07~</span></div><p>다이나믹셀 XM430 4륜 메카넘 — MuJoCo 시뮬(GOAL_PID·오도메트리·PID-Fuzzy 벤치)과 실물(ESP32 UDP+OpenCR 통합펌웨어) 양쪽 구동. 속도 피드포워드로 원궤적 RMSE 142→5mm, 전수 벤치로 "잘 튜닝된 고정 PID는 퍼지가 못 이김" 결론 도출. ArUco 절대측위·Quest3 MR 텔레옵 1차 성공.</p></div><div class="proj"><div class="proj-head"><b>모바일 매니퓰레이터 통합 시뮬</b><span class="badge">진행중</span>
+          <span class="period">2026.08~</span></div><p>메카넘 4륜+OpenManipulator-X 4축 통합 시뮬레이터. 브라우저(three.js 뷰어)+파이썬 MuJoCo 플랜트(mm_plant) 구조로, 실물 브리지와 같은 프로토콜의 COMMAND 모드 실주행. 자체 테스트 273건 ALL PASS. <b>시뮬-실물 드롭인 호환</b>(real_plant 교체만으로 실물 전환) 설계가 핵심.</p></div><div class="proj"><div class="proj-head"><b>스마트해운물류 공모</b><span class="badge">지원 준비</span>
+          <span class="period">2026.08~</span></div><p>스마트해운물류 관련 공모 서류 준비 중 — 자체 목표 8/23까지 작성.</p></div><div class="proj"><div class="proj-head"><b>모두의 창업 대학 리그 (모바일로봇 자동화)</b><span class="badge">서류 작성 중 (팀·아이템 확정)</span>
+          <span class="period">2026.08~2026.09</span></div><p>앵커사업단 모바일로봇 자동화 아이템 <b>"RS Spotter"</b> 를 연장해 성균관대 창업중심대학 <b>모두의 창업 대학 리그</b>에 지원. 신청 = 이메일(sk2025@skku.edu), 신청서+사업계획서+개인정보동의서(팀원 전원), 2인 이상 팀. 1차 서류평가(참여의지30·팀구성30·아이템현황20·차별성20·인프라 가점5)로 10팀 → 빌드업 캠프(AI 피치덱) → 2차 발표(2팀) → 본선 해커톤. 팀 3인 = 팀장(본인, 전전+철학) / 경영(해커톤 멤버) / AI융합학부(신규). 영상학과는 불참. 리치스태커 연구자는 팀 외부 — 출전 제안자·자문 네트워크로만 서술. 아이템 = "그늘 2.0 — 사각지대를 스스로 찾아가는 자동화 안전 신호수 로봇" (8/21 팀 결정: 모바일로봇 자동화 중심 확정, 트윈=로봇의 두뇌). 팀 브리핑 = ` (서버 8813 "rsspotter"). 확장 로드맵 = `확장로드맵_ABC플랜.html` — 플랜 A(기완성 자산)/B(로봇 스캔→트윈 갱신, 9/9 목표)/C(폐루프 인지보조, 본선 카드), RS-Spotter 자산 인수(자유 사용+지속 자문). 두 문서 모두 용어 사전 포함, PDF 병행. 서류작성가이드(hwp 항목별 초안, Sim-first 서사) 완성 — 통합 팀문서(그늘2.0_팀문서.html, 3탭)로 배포.</p></div></div><h3 class="dom">햅틱·XR</h3><div class="projects"><div class="proj"><div class="proj-head"><b>DNA-HERO 오랑 — 소아 텔레햅틱 로봇</b><span class="badge">진행중</span>
+          <span class="period">2026.04~2026.10</span></div><p>소아 환자 라포 형성용 텔레햅틱스 원격 로봇 — HMD·IMU 손목밴드·발판 컨트롤러를 Unity 리타게팅+Python SHM으로 Dynamixel 상체·메카넘휠에 전달. 팀장으로 과제 수행, 중간발표 HTML 덱 2종 제작. 부모-아동 A/B/C 조건 실험 예정.</p></div><div class="proj"><div class="proj-head"><b>EncounterHaptic 열 디스플레이</b><span class="badge">진행중</span>
+          <span class="period">2026.08~</span></div><p>펠티어 4ch 온도 디스플레이 모듈 — ESP32↔Python 브릿지↔Unity 3계층. 펌웨어 1kHz PID(가열/냉각 비대칭 게인)·LEDC 20kHz·듀티캡·워치독·NVS 설정, MLX90614 피부온도 1차. 시뮬 E2E·컴파일 검증 완료, 실기 벤치 미수행.</p></div><div class="proj"><div class="proj-head"><b>혼종 풀트래킹 캘리브레이션 (fullt)</b><span class="badge">진행중</span>
+          <span class="period">2026.07~</span></div><p>Quest3+Vive Tracker 좌표계 정합(hand-eye AX=XB, Kabsch+LM refine). 칼만 랙보정으로 추적오차 4.86→1.23mm, 3언어(Py/C#/JS) 구현 패리티 0mm, 실기 배치 RMS 5.79mm. 텔레로보틱스용 — 트래커를 메카넘 로봇 pose 소스로 승격 예정. three.js 이론교재·씬 에셋은 통합 시뮬로 계승됨.</p></div><div class="proj"><div class="proj-head"><b>bHaptics 괴물게임 (DCS 동상)</b><span class="badge done">완료 ✓</span>
+          <span class="period">2026.07</span></div><p>bHaptics 조끼로 가상환경 NPC 탐지를 렌더링하는 괴물게임(탐지·봉인·전시 루프) — 4인 연합팀. 한국디지털콘텐츠학회 하계학술대회 대학생 논문경진 <b>동상</b>(2026.7.3).</p></div></div><h3 class="dom">임베디드·IoT</h3><div class="projects"><div class="proj"><div class="proj-head"><b>BMW 이노베이션 — 스마트하네스</b><span class="badge">결과 대기</span>
+          <span class="period">2026~</span></div><p>BMW 이노베이션 공모에 <b>스마트하네스</b> 아이템으로 응모 — 결과 발표 2026-08-24 예정.</p></div><div class="proj"><div class="proj-head"><b>AirLifeShield119 가스감지 (한이음)</b><span class="badge">진행중</span>
+          <span class="period">2026~</span></div><p>밀폐공간 가스 위험 감지 AI 시스템 (구명칭 Smart Canary) — MCU 파트 담당. 멘토 정본(8/17) T18 실전 PCB+프로토콜 V1.1 분석으로 <b>타겟 MCU=M0518LD2AE(Cortex-M0) 확정</b>(M453은 학습용이었음), 보드별 1:1 전용 UART 구조(UART0=Pi5·2=UNO Q·5=EdgeAI) 확인. <b>팀 통신규약 v1.0 확정·배포(8/19)</b>: 28바이트 고정 프레임·빅엔디언·체크섬 Σ[7..25] — 테스트 벡터·검증기 내장 TEAM_INTERFACE.html 제작. 다음: M0518 BSP 전환, 프레임 빌더 펌웨어, 패킷 에뮬레이터 (STATUS.md에 TODO·질문 목록).</p></div><div class="proj"><div class="proj-head"><b>STM32 CAN 음성제어 차량</b><span class="badge done">완료 ✓</span>
+          <span class="period">~2026.07</span></div><p>Nucleo-F411 2보드 — MCP2515 CAN 드라이버 라이브러리 없이 자작(SPI·비트타이밍·인터럽트·500kbps), INMP441 I2S 음성→CNN 분류→CAN ID 0x200 5신호→차량 기능 제어. CANable+Python 버스 모니터 자작으로 비트레벨 검증. 발표 완료.</p></div></div><h3 class="dom">게임·웹툴</h3><div class="projects"><div class="proj"><div class="proj-head"><b>AssetLab 범용 3D 에셋 스튜디오</b><span class="badge">진행중</span>
+          <span class="period">2026.08~</span></div><p>LLM 코드→검증 폐루프로 3D 에셋을 만드는 Vite+TS 툴 — 관절 스펙 메타데이터(그룹 이름=피벗), glTF 허브+MJCF/URDF 내보내기(Y-up→Z-up 켤레변환), 폴리곤 예산 검증. 프리셋 3종 E2E 합격. MuJoCo/Unity/Three.js 포팅 파이프라인용.</p></div><div class="proj"><div class="proj-head"><b>Hamster Knight 플랫포머</b><span class="badge">진행중</span>
+          <span class="period">2026.07~</span></div><p>할로우나이트 모티브 2D 액션 — 순수 HTML5 Canvas+ES 모듈 자작 엔진(외부 라이브러리 0). 스프라이트는 Grok CLI 위임 생성, 시트 PNG+JSON 계약으로 코드-그림 분리. 물리 튜닝(점프 80px·대시 560px/s)에서 레벨 설계 규칙 도출.</p></div></div><h3 class="dom">음악·전자공작</h3><div class="projects"><div class="proj"><div class="proj-head"><b>아즈사·유이드라이브 자작 페달</b><span class="badge">진행중</span>
+          <span class="period">2026.07~</span></div><p>Hotcake 계열 2회로(LED 소프트/다이오드 하드 클리핑) 2-in-1 오버드라이브 + ESP32-C3 릴레이 채널전환·효과음·OLED. KiCad 회로도를 파이썬 생성기로 작성, ERC 0에러·원본 PDF 넷리스트 전수 대조, 풋프린트 64부품 할당 완료. 다음 = 레이아웃→JLCPCB 발주.</p></div><div class="proj"><div class="proj-head"><b>Tactar 이펙터 컨트롤러 (ESP32+Nextion)</b><span class="badge done">완료 ✓</span>
+          <span class="period">2026.06~2026.08</span></div><p>Bela 전자악기(Tactar)의 이펙터 제어 서피스 — ESP32가 Nextion 5인치 터치 HMI 파싱·8이펙트 토글·파라미터 페이징을 전담하고, Bela엔 ASCII 한 줄 프로토콜만 전달해 오디오 실시간성 보호. 컨트롤 서피스부터 Bela 연동까지 완결(2026.08 사용자 확인). [마무리 세부: 필요 시 기록 보강]</p></div></div>
+
+<h2>📅 다가오는 마감</h2>
+<div class="dl"><b>08/23</b><span>서류 작성 (자체 목표)</span>
+    <small>모두의 창업 대학 리그 (모바일로봇 자동화)</small><em>D-2</em></div><div class="dl"><b>08/23</b><span>서류 작성 (자체 목표)</span>
+    <small>스마트해운물류 공모</small><em>D-2</em></div><div class="dl"><b>08/24</b><span>지원서 제출 (sk2025@skku.edu)</span>
+    <small>모두의 창업 대학 리그 (모바일로봇 자동화)</small><em>D-3</em></div><div class="dl"><b>09/05</b><span>VRST '26 투고 목표 (모바일+로봇팔 데모)</span>
+    <small>모바일 매니퓰레이터 통합 시뮬</small><em>D-15</em></div><div class="dl"><b>09/05</b><span>VRST '26 투고 목표 (열 햅틱 트랙)</span>
+    <small>EncounterHaptic 열 디스플레이</small><em>D-15</em></div><div class="dl"><b>09/07</b><span>한이음 서류 마감</span>
+    <small>AirLifeShield119 가스감지 (한이음)</small><em>D-17</em></div><div class="dl"><b>09/07</b><span>한이음 서류 마감</span>
+    <small>DNA-HERO 오랑 — 소아 텔레햅틱 로봇</small><em>D-17</em></div>
+
+<footer>
+  이 페이지는 로컬 프로젝트 관리 볼트에서 자동 생성됩니다 · 갱신 2026-08-21 ·
+  <a href="https://github.com/kungfumaru">github.com/kungfumaru</a>
+</footer>
+</main>
+</body>
+</html>
